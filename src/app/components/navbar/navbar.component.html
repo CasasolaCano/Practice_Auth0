@@ -13,7 +13,11 @@
             </li>
         </ul>
         <span class="navbar-text">
-        Navbar text with an inline element
+            
+            <button class="btn btn-outline-primary" *ngIf="auth.user$"> Ingresar</button>
+
+            <button class="btn btn-outline-danger"  *ngIf="!auth.user$ "> Salir</button>
+
       </span>
     </div>
 </nav>
