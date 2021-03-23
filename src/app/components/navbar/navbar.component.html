@@ -13,10 +13,20 @@
             </li>
         </ul>
         <span class="navbar-text">
-            
-            <button class="btn btn-outline-primary" *ngIf="auth.user$"> Ingresar</button>
 
-            <button class="btn btn-outline-danger"  *ngIf="!auth.user$ "> Salir</button>
+            <ng-container *ngIf="auth.isAuthenticated$ |async; else loggedOut">
+                
+                <button class="btn btn-outline-danger" (click)="auth.logout({returnTo: document.location.origin})"> 
+                    Salir
+                </button>
+
+            </ng-container>
+            
+            <ng-template #loggedOut>
+                <button class="btn btn-outline-primary"  (click)="auth.loginWithRedirect()">
+                    Ingresar
+                </button>
+            </ng-template>
 
       </span>
     </div>
