@@ -12,6 +12,7 @@ export class ProtectComponent implements OnInit {
   constructor(public auth:AuthService) { }
 
   ngOnInit(): void {
+    
   }
 
 }

@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
   constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) { }
 
   ngOnInit(): void {
+    
   }
 
 }
